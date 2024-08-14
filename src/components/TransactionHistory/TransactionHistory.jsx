@@ -10,17 +10,18 @@ export default function TransactionHistory({ items }) {
           <th className={styles.th}>Currency</th>
         </tr>
       </thead>
-      {items.map(({ type, amount, currency, id }) => (
-        <tbody key={id}>
-          <tr>
+
+      <tbody>
+        {items.map(({ type, amount, currency, id }) => (
+          <tr key={id}>
             <td className={styles.td}>
               {type.charAt(0).toUpperCase() + type.slice(1)}
             </td>
             <td className={styles.td}>{amount}</td>
             <td className={styles.td}>{currency}</td>
           </tr>
-        </tbody>
-      ))}
+        ))}
+      </tbody>
     </table>
   );
 }
